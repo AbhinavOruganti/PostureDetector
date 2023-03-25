@@ -28,18 +28,19 @@ while True:
             right_elbow = results.pose_landmarks.landmark[mpPoseInstance.PoseLandmark.RIGHT_ELBOW]
             left_wrist = results.pose_landmarks.landmark[mpPoseInstance.PoseLandmark.LEFT_WRIST]
             right_wrist = results.pose_landmarks.landmark[mpPoseInstance.PoseLandmark.RIGHT_WRIST]
-            mid_hip = results.pose_landmarks.landmark[mpPoseInstance.PoseLandmark.MID_HIP]
+            # mid_hip = results.pose_landmarks.landmark[mpPoseInstance.PoseLandmark.MID_HIP]
 
             # Calculate shoulder and hip widths
             shoulder_width = abs(left_shoulder.x - right_shoulder.x) * source.shape[1]
             hip_width = abs(left_hip.x - right_hip.x) * source.shape[1]
 
             # Calculate angle between shoulders and hips
-            shoulder_hip_angle = abs(mp.solutions.angle_calculator.get_angle(
-                left_shoulder, mid_hip, right_shoulder).degrees)
+            # shoulder_hip_angle = abs(mp.solutions.angle_calculator.get_angle(
+            #     left_shoulder, hip_width, right_shoulder).degrees)
 
             # Check if posture is incorrect
-            if shoulder_width > hip_width and shoulder_hip_angle < 170:
+            # if shoulder_width > hip_width and shoulder_hip_angle < 170:
+            if shoulder_width > hip_width:
                 if correct_posture:
                     # Incorrect posture detected
                     start_time = time.time()
