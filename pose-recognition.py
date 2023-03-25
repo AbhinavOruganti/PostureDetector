@@ -10,12 +10,12 @@ toaster = ToastNotifier()
 capture = cv.VideoCapture(0)
 
 while True:
-    success, source = cap.read()
+    success, source = capture.read()
     imgRGB = cv.cvtColor(source, cv.COLOR_BGR2RGB)
     results = pose.process(imgRGB)
     print(results.pose_landmarks)
     if results.pose_landmarks:
-        mpDraw.draw_landmarks(source, results.pose_landmarks, mpPose.POSE_CONNECTIONS)
+        mpDrawUtility.draw_landmarks(source, results.pose_landmarks, mpPoseInstance.POSE_CONNECTIONS)
         for id, lm in enumerate(results.pose_landmarks.landmark):
             h, w,c = source.shape
             print(id, lm)
