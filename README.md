@@ -11,8 +11,8 @@ This application detects incorrect posture by tracking key points of a person's 
 
 ## Installation
 
-1. Install Python 3.x (version 3.7.0 recommended) from the official website: https://www.python.org/downloads/
-2. Install OpenCV: `pip install opencv-python`
+1. Install Python version 3.7.0 from the official website: https://www.python.org/downloads/
+2. Install OpenCV: `pip install opencv-contrib-python`
 3. Install Mediapipe: `pip install mediapipe`
 4. Install win10toast: `pip install win10toast`
 
